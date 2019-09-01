@@ -15,12 +15,13 @@ node {
       } 
     }
    stage('Sonarqube analysis'){
-     withMaven(jdk: 'jdk-1.8', maven: 'maven-3.6.1') 
+      withMaven(jdk: 'jdk-1.8', maven: 'maven-3.6.1') {
       sh 'mvn sonar:sonar \
       -Dsonar.projectKey=firstmaven \
       -Dsonar.organization=maven-saru \
       -Dsonar.host.url=https://sonarcloud.io \
       -Dsonar.login=30806e1c07fd323ad4a57127d9a944c92eed6c92'
+      }
     }
   stage("Quality Gate"){
           
