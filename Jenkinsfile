@@ -5,17 +5,17 @@ node {
      
     }
    stage('Build') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+    withMaven(jdk: 'jdk-1.8', maven: 'Maven-3.6.1') {
       sh 'mvn clean compile'
       }
     }
    stage('Unit Test run') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+    withMaven(jdk: 'jdk-1.8', maven: 'Maven-3.6.1') {
      sh 'mvn test'
       } 
     }
    stage('Sonarqube analysis'){
-     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+     withMaven(jdk: 'jdk-1.8', maven: 'Maven-3.6.1') {
       sh 'mvn sonar:sonar \
       -Dsonar.projectKey=firstmaven \
       -Dsonar.organization=maven-saru \
