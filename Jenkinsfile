@@ -15,7 +15,7 @@ node {
       } 
     }
    stage('Sonarqube analysis'){
-     withMaven(jdk: 'jdk-1.8', maven: 'maven-3.6.1') {
+     withMaven(jdk: 'jdk-1.8', maven: 'maven-3.6.1') 
       sh 'mvn sonar:sonar \
       -Dsonar.projectKey=firstmaven \
       -Dsonar.organization=maven-saru \
